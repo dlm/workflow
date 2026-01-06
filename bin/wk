@@ -1,0 +1,35 @@
+#!/usr/bin/env nu
+
+use ../lib/env.nu
+use ../lib/run.nu 
+use ../lib/util.nu
+
+export def --wrapped main [subcmd: string, ...args] {
+    # let split_args = util split_on_separator $args "--"
+    #
+    #
+    # print $split_args.before
+    # print $split_args.after
+    #
+    # let command = $args.0
+    # let rest = $args | skip 1
+
+
+# - `wk run <pkg> [-- args…]`
+#   - Expands to `nix run nixpkgs#<pkg> -- …`
+#   - If `<pkg>` contains `#`, pass through unchanged
+# }
+
+    # let command = $args.0
+    # let rest = $args | skip 1
+    # print $command
+    # print $rest
+
+    match $subcmd {
+        # "-h" | "--help" => { show_help; return }
+        # "-v" | "--version" => { print (version_string); return }
+        "run" => { run $args; return }
+        # "env" => { env main ...$rest; return }
+        _ => { util die  $"unknown command: ($subcmd)" }
+    }
+}

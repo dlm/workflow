@@ -6,6 +6,16 @@ automate and standardize my day-to-day developer workflow.
 The main interface is `wk`, a CLI that smooths friction around nix, direnv, vcs, etc.
 git worktrees.
 
+## Current status
+
+`wk` is currently a Nushell hello-world stub to prove out the CLI entrypoint.
+
+```bash
+./bin/wk           # prints a hello-world banner
+./bin/wk run foo   # echoes that it received args
+./bin/wk env bar   # echoes that it received args
+```
+
 ## Primary tool: `wk`
 
 `wk` is a workflow orchestrator. It wraps common commands and codifies small
