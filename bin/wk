@@ -1,7 +1,6 @@
 #!/usr/bin/env nu
 
-use ../lib/env.nu
-use ../lib/run.nu 
+use ../lib/run.nu
 use ../lib/util.nu
 
 export def --wrapped main [subcmd: string, ...args] {
